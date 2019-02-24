@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <clocale>
 #include "Decimal.h"
 using namespace std;
 
@@ -14,9 +15,15 @@ Decimal::~Decimal() {
 }
 
 Decimal& Decimal::operator=(const Decimal& D) {
-    (*this).length = D.length;
-    for (int i = 0; i < D.length; i++) {
-        (*this).number[i] = D.number[i];
+    if (D.length > length) {
+        length = D.length;
+        delete [] number;
+        number = new unsigned char [length];
+    }
+    int i = 0;
+    while (D.number[i]) {
+        number[i] = D.number[i];
+        i++;
     }
     return *this;
 }
