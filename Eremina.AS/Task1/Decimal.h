@@ -1,0 +1,25 @@
+#pragma once
+using namespace std;
+
+class Decimal {
+    unsigned char* number;
+    int length;
+public:
+    // Constructors
+    Decimal();
+    explicit Decimal(int size);
+    // Destructor
+    ~Decimal();
+    // Operation overload
+    Decimal& operator=(const Decimal& D);
+    Decimal operator+(const Decimal& D);
+    Decimal operator-(const Decimal& D);
+    bool operator>(const Decimal& D);
+    bool operator<(const Decimal& D);
+    bool operator==(const Decimal& D);
+    bool operator>=(const Decimal& D);
+    bool operator<=(const Decimal& D);
+    bool operator!=(const Decimal& D);
+    friend ostream& operator<<(ostream& stream, const Decimal& D);
+    friend istream& operator>>(istream& stream, const Decimal& D);
+};
