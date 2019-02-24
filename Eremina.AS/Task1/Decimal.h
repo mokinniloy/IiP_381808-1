@@ -5,9 +5,8 @@ class Decimal {
     unsigned char* number;
     int length;
 public:
-    // Constructors
-    Decimal();
-    explicit Decimal(int size);
+    // Constructor
+    Decimal(int size);
     // Destructor
     ~Decimal();
     // Operation overload

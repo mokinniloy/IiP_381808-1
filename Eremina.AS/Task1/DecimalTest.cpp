@@ -19,7 +19,7 @@ int main() {
     cout << "Enter the second number: ";
     cin >> Dec2;
 
-    Decimal Dec3;
+    Decimal Dec3(n);
 
     Dec3 = Dec1 + Dec2;
     cout << "Their sum: " << Dec3 << endl;

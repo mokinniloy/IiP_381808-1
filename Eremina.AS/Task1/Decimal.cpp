@@ -1,13 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include <clocale>
 #include "Decimal.h"
 using namespace std;
-
-Decimal::Decimal() {
-    length = 0;
-    number = new unsigned char[length];
-}
 
 Decimal::Decimal(int size) {
     length = size;
@@ -16,7 +10,7 @@ Decimal::Decimal(int size) {
 
 Decimal::~Decimal() {
     length = 0;
-    delete number;
+    delete [] number;
 }
 
 Decimal& Decimal::operator=(const Decimal& D) {
@@ -28,22 +22,28 @@ Decimal& Decimal::operator=(const Decimal& D) {
 }
 
 Decimal Decimal::operator+(const Decimal& D) {
-    Decimal Res;
+    int l = 0;
     if (length > D.length) {
-        Res.length = length;
+        l = length;
     } else if (length < D.length) {
-        Res.length = D.length;
+        l = D.length;
     } else {
         if (number[length-1] + D.number[D.length-1] > 9) {
-            Res.length = length + 1;
+            l = length + 1;
         } else {
-            Res.length = length;
+            l = length;
         }
     }
+    Decimal Res(l);
     int tmp = 0;
     for (int i = 0; i < Res.length; i++) {
-        Res.number[i] = (number[i] + D.number[i] + tmp) % 10;
-        tmp = (number[i] + D.number[i] + tmp) / 10;
+        if (i < D.length) {
+            Res.number[i] = (number[i] + D.number[i] + tmp) % 10;
+            tmp = (number[i] + D.number[i] + tmp) / 10;
+        } else {
+            Res.number[i] = (number[i] + tmp) % 10;
+            tmp = (number[i] + tmp) / 10;
+        }
     }
     return Res;
 }
