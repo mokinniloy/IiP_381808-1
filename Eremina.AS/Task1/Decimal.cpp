@@ -208,7 +208,7 @@ ostream& operator<<(ostream& stream, const Decimal& D) {
     return stream;
 }
 
-istream& operator>>(istream& stream, const Decimal& D) {
+istream& operator>>(istream& stream, Decimal& D) {
     char* str = new char[D.length+1];
     cin.ignore();
     stream.getline(str, D.length+1);

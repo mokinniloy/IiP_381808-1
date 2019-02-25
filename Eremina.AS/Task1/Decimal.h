@@ -20,5 +20,5 @@ public:
     bool operator<=(const Decimal& D);
     bool operator!=(const Decimal& D);
     friend ostream& operator<<(ostream& stream, const Decimal& D);
-    friend istream& operator>>(istream& stream, const Decimal& D);
+    friend istream& operator>>(istream& stream, Decimal& D);
 };
