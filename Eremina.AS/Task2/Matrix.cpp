@@ -10,8 +10,7 @@ Matrix::Matrix(int s) {
     }
 }
 
-Matrix::Matrix(const Matrix & Mat)
-{
+Matrix::Matrix(const Matrix & Mat) {
     size = Mat.size;
     items = new int*[size];
     for (int i = 0; i < size; i++) {
