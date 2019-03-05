@@ -2,11 +2,26 @@
 #include "Matrix.h"
 using namespace std;
 
-Matrix::Matrix() {
-    size = 8;
+Matrix::Matrix(int s) {
+    size = s;
     items = new int* [size];
     for (int i = 0; i < size; i++){
         items[i] = new int [size];
+    }
+}
+
+Matrix::Matrix(const Matrix & Mat)
+{
+    size = Mat.size;
+    items = new int*[size];
+    for (int i = 0; i < size; i++) {
+        items[i] = new int[size];
+    }
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            items[i][j] = Mat.items[i][j];
+        }
     }
 }
 
@@ -16,10 +31,6 @@ Matrix::~Matrix() {
     }
     delete[] items;
     size = 0;
-}
-
-void Matrix::setsize(int s) {
-    size = s;
 }
 
 int Matrix::getsize() {
@@ -46,8 +57,7 @@ bool Matrix::diagdom() {
 }
 
 Matrix Matrix::operator+(const Matrix& M) {
-    Matrix Res;
-    Res.setsize(size);
+    Matrix Res(size);
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             Res.items[i][j] = items[i][j] + M.items[i][j];
@@ -74,4 +84,23 @@ Matrix &Matrix::operator=(const Matrix &M) {
         }
     }
     return *this;
+}
+
+ostream &operator<<(ostream &stream, const Matrix &M) {
+    for (int i = 0; i < M.size; i++) {
+        for (int j = 0; j < M.size; j++) {
+            stream << M.items[i][j] << " ";
+        }
+        stream << endl;
+    }
+    return stream;
+}
+
+istream &operator>>(istream &stream, Matrix &M) {
+    for (int i = 0; i < M.size; i++){
+        for (int j = 0; j < M.size; j++) {
+            cin >> M.items[i][j];
+        }
+    }
+    return stream;
 }
