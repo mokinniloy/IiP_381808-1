@@ -3,11 +3,10 @@
 using namespace std;
 
 int main() {
-    Matrix M1;
     int n1;
     cout << "Enter the size of the matrix: ";
     cin >> n1;
-    M1.setsize(n1);
+	Matrix M1(n1);
 
     for (int i = 0; i < n1; i++) {
         for (int j = 0; j < n1; j++) {
@@ -22,11 +21,10 @@ int main() {
         cout << endl;
     }
 
-    Matrix M2;
     int n2;
     cout << "Enter the size of the matrix: ";
     cin >> n2;
-    M2.setsize(n2);
+	Matrix M2(n2);
 
     for (int i = 0; i < n2; i++) {
         for (int j = 0; j < n2; j++) {

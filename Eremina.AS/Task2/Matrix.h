@@ -4,9 +4,10 @@ class Matrix {
     int size;
     int** items;
 public:
-    Matrix(); // Constructor
+	// Constructors
+    Matrix(int s);
+	Matrix(const Matrix& Mat);
     ~Matrix(); // Destructor
-    void setsize(int s);
     int getsize();
     int *operator[] (int index);
     bool diagdom(); // Diagonal dominance
