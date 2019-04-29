@@ -1,4 +1,4 @@
-#include "RailTicketOffice.h"
+ï»¿#include "RailTicketOffice.h"
 #include <iostream>
 #include <locale.h>
 using namespace std;
@@ -8,10 +8,10 @@ int main()
 	setlocale(LC_ALL, "RUS");
 	RailTicketOffice RTO;
 	int point;
-	cout << "Ïðèâåòñòâóåì âàñ â Æåëåçíîäîðîæíîé êàññå Ãîðüêîâñêîé æåëåçíîé äîðîãè!\n"
-		"1 - Êóïèòü áèëåò\n"
-		"2 - Óçíàòü î íàëè÷èè ñâîáîäíûõ ìåñò\n"
-		"0 - Âûõîä\n";
+	cout << "ÐŸÑ€Ð¸Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÐµÐ¼ Ð²Ð°Ñ Ð² Ð–ÐµÐ»ÐµÐ·Ð½Ð¾Ð´Ð¾Ñ€Ð¾Ð¶Ð½Ð¾Ð¹ ÐºÐ°ÑÑÐµ Ð“Ð¾Ñ€ÑŒÐºÐ¾Ð²ÑÐºÐ¾Ð¹ Ð¶ÐµÐ»ÐµÐ·Ð½Ð¾Ð¹ Ð´Ð¾Ñ€Ð¾Ð³Ð¸!\n"
+		"1 - ÐšÑƒÐ¿Ð¸Ñ‚ÑŒ Ð±Ð¸Ð»ÐµÑ‚\n"
+		"2 - Ð£Ð·Ð½Ð°Ñ‚ÑŒ Ð¾ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ð¸ ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ñ‹Ñ… Ð¼ÐµÑÑ‚\n"
+		"0 - Ð’Ñ‹Ñ…Ð¾Ð´\n";
 	for (;;)
 	{
 		cout << ">>> ";
@@ -25,7 +25,7 @@ int main()
 			RTO.free_places();
 			break;
 		case 0:
-			cout << "Äî ñâèäàíèÿ!";
+			cout << "Ð”Ð¾ ÑÐ²Ð¸Ð´Ð°Ð½Ð¸Ñ!";
 			exit(0);
 		default:
 			break;

@@ -1,11 +1,11 @@
-#include "Wagon.h"
+п»ї#include "Wagon.h"
 #pragma once
 
 class Train
 {
-	int type; /* 1 - Ласточка
-				 2 - Фирменный
-				 3 - Скорый */
+	int type; /* 1 - Р›Р°СЃС‚РѕС‡РєР°
+				 2 - Р¤РёСЂРјРµРЅРЅС‹Р№
+				 3 - РЎРєРѕСЂС‹Р№ */
 	Wagon* wagons;
 	int wagons_count;
 	int wc_1, wc_2, wc_3, wc_4;

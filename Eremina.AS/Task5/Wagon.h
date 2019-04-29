@@ -1,11 +1,11 @@
-#pragma once
+п»ї#pragma once
 
 class Wagon 
 {
-	int type;  /* 1 - Сидячий
-				  2 - Плацкартный
-				  3 - Купейный
-				  4 - СВ */
+	int type;  /* 1 - РЎРёРґСЏС‡РёР№
+				  2 - РџР»Р°С†РєР°СЂС‚РЅС‹Р№
+				  3 - РљСѓРїРµР№РЅС‹Р№
+				  4 - РЎР’ */
 	int place_count;
 	int place_price;
 	bool** places;
@@ -13,9 +13,9 @@ public:
 	Wagon();
 	Wagon(int t, int pc);
 	~Wagon();
-	int get_type();  // Узнать тип вагона
-	int get_place_count();  // Узнать общее кол-во мест
-	bool get_place(int day, int pl);  // Обратиться к месту
-	int get_price();  // Узнать цену
-	void reserve(int day, int pl);  // Купить место
+	int get_type();  // РЈР·РЅР°С‚СЊ С‚РёРї РІР°РіРѕРЅР°
+	int get_place_count();  // РЈР·РЅР°С‚СЊ РѕР±С‰РµРµ РєРѕР»-РІРѕ РјРµСЃС‚
+	bool get_place(int day, int pl);  // РћР±СЂР°С‚РёС‚СЊСЃСЏ Рє РјРµСЃС‚Сѓ
+	int get_price();  // РЈР·РЅР°С‚СЊ С†РµРЅСѓ
+	void reserve(int day, int pl);  // РљСѓРїРёС‚СЊ РјРµСЃС‚Рѕ
 };

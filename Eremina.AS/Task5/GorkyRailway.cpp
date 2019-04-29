@@ -1,4 +1,4 @@
-#include "GorkyRailway.h"
+ï»¿#include "GorkyRailway.h"
 #include "Train.h"
 #include "Wagon.h"
 #include <iostream>
@@ -109,7 +109,7 @@ void GorkyRailway::free_places(int day, int number, int vgtype)
 			{
 				if (train_list[i].get_wagon_type(j) == vgtype)
 				{
-					cout << "Âàãîí " << j+1 << ": ";
+					cout << "Ð’Ð°Ð³Ð¾Ð½ " << j+1 << ": ";
 					for (int u = 0; u < train_list[i].get_wagon_place_count(j); u++)
 					{
 						if (train_list[i].get_wagon_place(j, day, u) == false)
